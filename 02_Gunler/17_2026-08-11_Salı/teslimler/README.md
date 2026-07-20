@@ -13,3 +13,5 @@ Stajyer_X/
 | C — Başar Yıldırım | ☐ | ☐ |
 | D — Aykut İsmet Aslantaş | ☐ | ☐ |
 | E — Yavuz Selim Konaç | ☐ | ☐ |
+| F — Bartu Abdioğlu | ☐ | ☐ |
+| G — Barış Kaynak | ☐ | ☐ |

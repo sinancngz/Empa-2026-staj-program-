@@ -1,6 +1,6 @@
 # Empa 2026 — Tiremo Cortex Staj Programı
 
-**Başlangıç:** 20 Temmuz 2026 · 5 stajyer
+**Başlangıç:** 20 Temmuz 2026 · 7 stajyer
 
 ---
 
@@ -15,6 +15,8 @@ Detay: [`00_Stajyerler/README.md`](00_Stajyerler/README.md)
 | C | Başar Yıldırım | 20 iş günü |
 | D | Aykut İsmet Aslantaş | 36 iş günü |
 | E | Yavuz Selim Konaç | 20 iş günü |
+| F | Bartu Abdioğlu | 36 iş günü |
+| G | Barış Kaynak | 36 iş günü |
 
 ---
 
