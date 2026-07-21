@@ -138,13 +138,11 @@ Bugün pratikte: buton → harici kesme → flag → `main`’de LED. İleride t
 
 ---
 
-## 5. Harici kesme pin ayarları (resim3)
+## 5. Harici kesme pin ayarları
 
-Araçta (MCUBrew / pin config) bir pin’i (örnekte **PA5**) açınca benzer bir pencere görürsünüz. Buton için tipik yol: pin **Input**, interrupt **Edge**, tetik **Rising** veya **Falling** (şemanıza göre).
+Araçta (MCUBrew / pin config) bir pin’i açınca benzer bir pencere görürsünüz. Buton için tipik yol: pin **Input**, interrupt **Edge**, tetik **Rising** veya **Falling** (şemanıza göre).
 
 ![Pin Configuration — PA5 örnek](kaynaklar/resimler/resim3.png)
-
-*Şekil: Tek pin (PA5) ayar diyaloğu. Interrupt Operation Mode ve Interrupt Triggering Mode harici kesme için kritik satırlardır.*
 
 ### Parametreler — ne işe yarar?
 
@@ -159,17 +157,13 @@ Aşağıdaki isimler araçtaki gibi; mantık diğer MCU’larda da benzerdir.
 
 Harici kesme için pin **Input** olmalıdır.
 
-#### Output Type, Output level, Set/Clear Level
-
-Bunlar **çıkış** pin’i içindir (Push-Pull / Open-Drain, varsayılan seviye). Butonu Input yaptıysan kesme anlatımında ikincil kalır; LED ayarlarken Pazartesi bilgisi geçerlidir.
-
 #### Internal Pull-Up / Pull-Down / Disable
 
 | Seçim | Pin boştayken | Tipik buton (GND’ye basınca) |
 |-------|---------------|------------------------------|
 | **Pull-Up** | HIGH (~1) | Basılı → LOW — çok yaygın |
 | **Pull-Down** | LOW (~0) | Basılı → HIGH |
-| **Disable** | Floating — rastgele | Kaçın (Pazartesi: floating pin) |
+| **Disable** | Floating — rastgele | Kaçın |
 
 **Örnek:** Pull-Up + buton GND’ye kısa. Basılınca 1→0. Kesmeyi **Falling Edge** (düşen kenar) yapmak mantıklıdır: “basıldığı an” yakalanır.
 
@@ -209,11 +203,9 @@ Yanlış kenar seçersen: “basıyorum, ISR hiç girmiyor” — önce pull + k
 | **Disable** | Her elektriksel titreme kesme üretebilir |
 | **Enable** | Pin üzerinde donanımsal süzme — bounce azaltır |
 
-Salı yazılım debounce’una ek veya alternatif. Enable edersen alttaki **Debouncing Clock Source / Divider** anlamlı olur.
-
 #### Common Clock — Debouncing Clock Source / Divider
 
-Debounce filtresi bir saatten beslenir (MCLK, HSI, LSE…). Divider 0 ise bazı araçlarda “besleme durur” notu vardır — filtreyi açtıysan geçerli bir kaynak ve bölen seç. Salı’daki clock anlatımı burada işe yarar: filtre de bir tick’e bağlıdır.
+Debounce filtresi bir saatten beslenir (MCLK, HSI, LSE…). Divider 0 ise bazı araçlarda “besleme durur” notu vardır — filtreyi açtıysan geçerli bir kaynak ve bölen seç. filtre de bir tick’e bağlıdır.
 
 #### Set Strong Port Output
 
