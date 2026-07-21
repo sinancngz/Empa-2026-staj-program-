@@ -116,7 +116,7 @@ Salı'da butonu döngüde okuyordun. Bugün olay **EXTI / kesme** ile geliyor; k
 4. Event'e göre:
    - chase **yönünü** değiştir (ileri ↔ geri), **veya**
    - chase **hızını** değiştir (yavaş ↔ hızlı)
-5. İstersen kodu böl: `button.h` / `button.c` (veya `.cpp`) ve LED tarafı ayrı dosya; `main` init + döngü + event'e tepki.
+5. Tercihen kodu modüler hale getirin : `button.h` / `button.c` ve LED tarafı ayrı dosya; `main` init + döngü + event'e tepki.
 6. Bitince kendi GitHub repona yükle (aşağıya bak).
 
 ### Doğru çalışıyor mu?
@@ -141,28 +141,30 @@ Salı'da butonu döngüde okuyordun. Bugün olay **EXTI / kesme** ile geliyor; k
 
 ---
 
-## Rapora eklenecek — teorik sorular
+## Rapora eklenecek — Teorik Sorular
 
-`gunluk_rapor.md` içinde **kendi cümlelerinle** cevapla (ders notunu kopyalama). Her soruya 2–5 cümle yeter.
+`gunluk_rapor.md` içinde **kendi cümlelerinle** cevapla. Hazır tanım kopyalama. Her soruya **2–5 cümle** yeterlidir. Mümkün olduğunca kendi yaptığın uygulamalardan örnek ver.
 
-### Pazartesi'den
+1. **GPIO** pinlerini **Input** ve **Output** modlarında karşılaştırınız. Bir LED ve bir buton örneği üzerinden çalışma mantığını açıklayınız.
 
-1. GPIO'da **Input** ile **Output** farkı nedir? LED ve buton hangisine girer?
-2. **Pull-up** ne işe yarar? Pull kapalı (floating) pin neden sorun çıkarır?
+2. **Pull-up**, **Pull-down** ve **Floating** giriş kavramlarını açıklayınız. Floating bir giriş pininin neden güvenilir olmadığını belirtiniz.
 
-### Salı'dan
+3. **MCU**, **MPU** ve **SoC** kavramlarını karşılaştırınız. Aralarındaki temel farkları, kullanım alanlarını ve kullandığınız A34G43x işlemcisinin hangi gruba girdiğini açıklayınız.
 
-3. **MPU** ile **MCU** farkını bir örnekle anlat (kartındaki çip hangisi?).
-4. `bool led_on` ve `void Led_Toggle()` bellekte kabaca nerede durur (RAM / Flash)? Neden?
-5. Debounce olmadan butonla toggle neden "çift basış" gibi görünür?
+4. Bir gömülü yazılımda **global değişken**, **static değişken**, **yerel (local) değişken**, **fonksiyon** ve **string sabitlerinin** belleğin hangi bölgelerinde bulunduğunu açıklayınız.
 
-### Çarşamba'dan
+5. **Polling** ve **Interrupt (Kesme)** yöntemlerini CPU kullanımı, tepki süresi ve enerji tüketimi açısından karşılaştırınız. Hangi durumlarda hangisinin tercih edilmesi daha uygundur?
 
-6. **Polling** ile **kesme** farkı nedir? Bugünkü kolay görevde hangisini kullandın?
-7. **ISR** nedir? İçinde neden uzun `delay` veya ağır iş istenmez?
-8. **NVIC** ne işe yarar? "Öncelik" ve "nested"i bir cümleyle açıkla.
-9. Pull-up butonda basışı yakalamak için genelde **Rising** mi **Falling** mi? Neden?
-10. `volatile bool button_flag` neden `volatile`?
+6. **Interrupt Service Routine (ISR)** nedir? ISR içerisinde neden uzun süre çalışan işlemler, `delay` fonksiyonları veya yoğun `printf` kullanımı önerilmez?
+
+7. **NVIC (Nested Vector Interrupt Controller)** ne işe yarar? Kesme önceliği (**priority**) ve iç içe kesme (**nested interrupt**) kavramlarını açıklayınız.
+
+8. Mekanik butonlarda görülen **debounce (contact bounce)** problemi nedir? Yazılımsal ve donanımsal çözüm yöntemlerini karşılaştırınız.
+
+9. Pull-up ile bağlanmış bir butonda neden genellikle **Falling Edge Interrupt** kullanılır? Rising Edge hangi durumlarda tercih edilebilir?
+
+10. ISR ile `main()` fonksiyonu tarafından ortak kullanılan bir değişken neden **`volatile`** olarak tanımlanmalıdır? `volatile` kullanılmadığında derleyicinin yaptığı optimizasyonlar ne tür hatalara yol açabilir?
+
 
 ---
 
