@@ -20,9 +20,9 @@ Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky`
 
 | # | Görev | Yapıldı |
 |---|-------|---------|
-| 1 | Bir LED’i sabit yak | ☐ |
-| 2 | Aynı LED’i söndür | ☐ |
-| 3 | LED’i yanıp söndür (blink) | ☐ |
+| 1 | Bir LED’i sabit yak | yapıldı |
+| 2 | Aynı LED’i söndür | yapıldı |
+| 3 | LED’i yanıp söndür (blink) | yapıldı |
 
 **Beklenen:** Output pin ve active-low / active-high farkı.
 
@@ -32,9 +32,9 @@ Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky`
 
 | # | Görev | Yapıldı |
 |---|-------|---------|
-| 1 | Kullanıcı butonunu oku (basılı / değil) | ☐ |
-| 2 | Buton basılıyken LED yansın, bırakınca sönsün | ☐ |
-| 3 | Buton her basışta LED’i aç/kapa (toggle) | ☐ |
+| 1 | Kullanıcı butonunu oku (basılı / değil) | yapıldı |
+| 2 | Buton basılıyken LED yansın, bırakınca sönsün | yapıldı |
+| 3 | Buton her basışta LED’i aç/kapa (toggle) | yapıldı |
 
 **Beklenen:** Input + pull-up/pull-down. Gerekirse basit debounce.
 
