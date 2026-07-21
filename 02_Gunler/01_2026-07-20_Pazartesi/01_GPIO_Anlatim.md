@@ -1,8 +1,8 @@
-# GPIO Anlatımı
+# GPIO — Giriş / Çıkış, LED ve Buton
 
-**Gün 01 · Tiremo Cortex · ABOV A34G43x**
+Tiremo Cortex · ABOV A34G43x
 
-Bu not, mentörün tahtada / ekranda anlatırken kullanacağı iskelettir. Amaç: pin’in ne işe yaradığını, LED ve butonun nasıl kontrol edildiğini netleştirmek.
+Bu notu okuyarak pin’in ne işe yaradığını, LED ve butonun nasıl kontrol edildiğini öğreneceksin. Sonra [`02_Gorevler.md`](02_Gorevler.md) ile uygula.
 
 ---
 
@@ -129,9 +129,9 @@ Bugün için yeterli çözümler:
 
 ---
 
-## 6. Anlatım sonrası
+## 6. Bundan sonra
 
-Anlatım bitince kendi projenle görevlere geç: kolay → orta → zor.
+Bu konuyu bitirince kendi projenle görevlere geç: kolay → orta → zor.
 
 | Seviye | Ne yapacaksın | Ne öğreniyorsun |
 |--------|----------------|-----------------|

@@ -1,9 +1,9 @@
 # Gün 01 — GPIO Görevleri
 
 **Herkes aynı görevleri yapar.**  
-Sıra: Kolay → Orta → Zor. Bitirdikçe mentöre göster.
+Sıra: Kolay → Orta → Zor. Bitince çalışmanı göster / teslim et.
 
-Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky`
+Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky` · Anlatım: [`01_GPIO_Anlatim.md`](01_GPIO_Anlatim.md)
 
 ---
 
@@ -11,8 +11,8 @@ Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky`
 
 - [ ] ABOV ortamı kurulu (eMStudio32 açılıyor)
 - [ ] Kart USB-C ile bağlı
-- [ ] İlk proje oluşturma gösterildi / kendi projeni açabildin
-- [ ] GPIO anlatımı yapıldı
+- [ ] Projeyi açabildin / oluşturabildin
+- [ ] GPIO notunu okudun
 
 ---
 
@@ -40,23 +40,23 @@ Referans: `Examples/GPIO/*` · `GPIO_LEDBlinky`
 
 | Görev | Yapıldı |
 |-------|---------|
-| En az 3 LED kayan ışık (chase); butonla yön **veya** hız değiştir; başlangıçta kısa self-test. Bitince kendi **GitHub** reponu oluşturup bugünün tarihli klasörüne yükle (aşağıya bak) | ☐ |
+| En az 3 LED kayan ışık (chase); butonla yön **veya** hız değiştir; başlangıçta kısa self-test. Bitince kendi **GitHub** reponu oluşturup bugünün tarihli klasörüne yükle | ☐ |
 
-**Beklenen:** Birden fazla pin + basit sayaç / durum. Mentöre kartta göster + repo linkini ver.
+**Beklenen:** Birden fazla pin + basit sayaç / durum. Kartta göster; repo linkini rapora yaz.
 
-### GitHub teslimi (zor — herkes kendi reposunu kurar)
+### GitHub teslimi (zor — kendi repon)
 
-1. GitHub’da **kendi** staj reponu oluştur (örn. `empa-2026-staj` — isim serbest; mentöre linki ver).  
+1. GitHub’da **kendi** staj reponu oluştur (örn. `empa-2026-staj` — isim serbest).  
 2. Bugünün işini **günün tarihiyle** yükle:
 
 ```
 YYYY-MM-DD/
-└── ...   (zor görev proje dosyaların / kaynak kod)
+└── ...
 ```
 
-Bugün için klasör adı: **`2026-07-20`**
+Bugün: **`2026-07-20`**
 
-3. README’de kısaca ne yaptığını yaz; repo linkini günlük rapora da ekle.
+3. README’de kısaca ne yaptığını yaz; repo URL’sini günlük rapora ekle.
 
 ---
 
@@ -64,7 +64,7 @@ Bugün için klasör adı: **`2026-07-20`**
 
 ```
 teslimler/Stajyer_X/
-├── rapor/gunluk_rapor.md    ← GitHub repo URL’si burada
+├── rapor/gunluk_rapor.md    ← GitHub repo URL’si
 └── proje/
 ```
 

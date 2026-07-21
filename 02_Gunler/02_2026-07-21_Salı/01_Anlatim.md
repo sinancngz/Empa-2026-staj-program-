@@ -1,14 +1,14 @@
 # Mikroişlemci (MPU) ve Mikrodenetleyici (MCU)
 
-**Gün 02 · Anlatım notları**
+Temel kavramlar, bellek (RAM / Flash) ve sistem saati
 
-Bu not mentörün anlatırken izleyeceği metindir. **Önce MPU ile MCU’yu net ayır**; RAM, Flash, GPIO, debounce ve C++ örneklerini **MCU (kartınız)** başlığı altında anlat. Stajda ABOV / benzeri MCU ile çalışıyorsunuz — ana odak orasıdır. Mikroişlemci kısmı, farkı oturtmak için özet kalsın.
+Bu notu okuyarak MPU ile MCU farkını, belleğin nerede durduğunu ve staj kartındaki çipin neden bir **MCU** olduğunu öğreneceksin. RAM, Flash, GPIO ve debounce örnekleri **MCU** bölümünde; mikroişlemci kısmı sadece farkı netleştirmek için kısa. Kartın: **ABOV A34G43x** (Tiremo Cortex).
 
 ---
 
 ## İki kavramı baştan ayır
 
-Stajyerlerin en sık karıştırdığı nokta şudur: “mikroişlemci” deyince sanki içindeki her şey (RAM, Flash, GPIO) de o çipin parçası sanılır. Klasik ayrım şöyle olmalıdır:
+Sık yapılan hata: “mikroişlemci” deyince RAM, Flash ve GPIO’nun da aynı çipin içinde sanılması. Klasik ayrım şöyle:
 
 | | **Mikroişlemci (MPU)** | **Mikrodenetleyici (MCU)** |
 |---|------------------------|----------------------------|
@@ -19,7 +19,7 @@ Stajyerlerin en sık karıştırdığı nokta şudur: “mikroişlemci” deyinc
 | **Örnek** | Intel Core, AMD Ryzen, ARM Cortex-A53 | STM32, ESP32, **ABOV A34G43x (kartınız)** |
 | **Saat / bellek ölçeği** | GHz, GB | MHz, KB–MB |
 
-**Mentör cümlesi:** “Bugün karttaki çip bir **MCU**. Mikroişlemciyi sadece ‘neden dışarıda RAM ister?’ diye anlıyoruz; asıl mimari MCU.”
+**Özet:** Kartındaki çip bir **MCU**. Mikroişlemciyi “neden dışarıda RAM ister?” diye anlıyoruz; staj boyunca asıl mimari MCU.
 
 ---
 
@@ -97,7 +97,7 @@ Aynı şekilde program deposu da çoğu zaman CPU paketinin dışında bir Flash
 
 MPU örnekleri: Intel Core, AMD Ryzen, birçok ARM Cortex-A tabanlı uygulama işlemcisi. Bunlar Linux / Windows / Android çalıştırabilir; etraflarında GB mertebesinde harici bellek vardır.
 
-**MPU bölümünü burada kapat.** Staj kodu, Flash’a yükleme, GPIO LED/buton, debounce — bunlar bir sonraki başlığın işidir.
+Buraya kadar MPU yeterli. Staj kodu, Flash’a yükleme, GPIO, LED/buton ve debounce bir sonraki başlıkta (MCU).
 
 ---
 
@@ -306,7 +306,7 @@ Kaynak (HSI veya HSE) üzerinden frekansı çarpar / böler; sistem saatini yük
 HSI veya HSE → PLL (isteğe bağlı) → sistem saati → CPU / bus / timer
 ```
 
-Örnek projede clock init’i açıp “saat ağacı burada” demek yeterlidir.
+Örnek projede clock / `System_Init` fonksiyonunu açıp saat ayarının nerede yapıldığına bakman yeterli; şimdilik register detayına inmen gerekmez.
 
 ---
 
@@ -319,7 +319,7 @@ Bu dosya ayrımı hem C hem C++ MCU projelerinde aynı mantıktadır.
 | `.c` / `.cpp` | Fonksiyon gövdeleri (implementation) |
 | `.h` | Prototipler, `enum`, `struct`, sabitler |
 
-Drivers / örnek klasöründen erişilir. IDE’de **Ctrl + sağ tık** ile tanıma gidilir — anlatırken göster.
+Drivers / örnek klasöründen bu dosyalara erişebilirsin. IDE’de fonksiyon adına **Ctrl + sağ tık** (Go to Definition) ile `.h` veya `.cpp` içindeki tanıma gidebilirsin.
 
 ```cpp
 // button.h
@@ -422,23 +422,13 @@ Görevler: [`02_Gorevler.md`](02_Gorevler.md) — hepsi **MCU** üzerinde.
 | Kısa / uzun basış | MCU RAM’de `down_ms` |
 | PRESS / RELEASE / LONG | `enum class` + state (MCU RAM) |
 
-**Kapanış cümleleri (ezberlet):**
+**Aklında kalsın:**
 
 1. **MPU** = CPU (+ cache, register, bus); RAM/Flash çoğu **dışarıda**, bus ile erişilir (resim1).  
-2. **MCU** = CPU + Flash + RAM + GPIO + … **tek çipte**; kartınız budur (resim2).  
+2. **MCU** = CPU + Flash + RAM + GPIO + … **tek çipte**; kartın budur (resim2).  
 3. `led_on`, `samples[]` → **MCU RAM**; `Led_Toggle` kodu → **MCU Flash**.  
 4. Karta yüklemek = **MCU Flash** güncellemek.  
 5. Saat yoksa debounce / basış süresi ölçülemez.
 
----
+Sonraki adım: [`02_Gorevler.md`](02_Gorevler.md).  
 
-## Mentör kontrol listesi
-
-- [ ] MPU ≠ MCU tablosu tahtada; “kart MCU” vurgusu  
-- [ ] MPU: harici RAM/Flash + bus ASCII/şema + **resim1**  
-- [ ] “RAM MPU’nun içinde” algısı bilinçli düzeltildi  
-- [ ] MCU + **resim2**; Flash’a yükleme / GPIO / RAM örnekleri burada  
-- [ ] C++ değişken–dizi = MCU RAM; kod/`const` = MCU Flash  
-- [ ] Clock (HSI/LSI/HSE/LSE/PLL) MCU bağlamında  
-- [ ] `.cpp`/`.h`, init, prototip  
-- [ ] Görevlere geçiş  
