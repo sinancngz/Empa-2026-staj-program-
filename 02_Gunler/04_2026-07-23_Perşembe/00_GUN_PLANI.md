@@ -1,45 +1,33 @@
-# Gün 04 — IRQ & EINT
+# Gün 04 — Temel C ve uygulama
 
 | | |
 |---|---|
 | **Tarih** | 2026-07-23 Perşembe |
 | **Hafta** | 1 |
-| **Konu** | Kesme (IRQ), EINT, flag → main |
-| **Referans** | `Examples/UARTn/UARTn_Interrupt/` |
+| **Konu** | C: veri türleri, `if`/`else`, `while`, `for` — kart kodunda |
+| **Referans** | `Examples/GPIO/*` · önceki gün projeleri |
 
 ---
 
 ## Bugün ne yapacağız?
 
-Polling yerine kesme ile buton/UART tepkisini öğreneceğiz. ISR’da az iş, asıl iş main’de.
+Sabah kısa **C notu** ([`01_Anlatim.md`](01_Anlatim.md)): veri türleri ve döngüler, Pazartesi–Çarşamba koduna bağlı.  
+Öğleden sonra **ağırlık uygulama**: görevlerde `if`, `while`, `for` kullanarak LED/buton projelerini yazıp pekiştireceksin.
 
-Anlatım notları: [`01_Anlatim.md`](01_Anlatim.md)  
+Anlatım: [`01_Anlatim.md`](01_Anlatim.md)  
 Görevler: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
 
-## Günlük ritim
+## Günlük ritim (uygulama ağırlıklı)
 
 | Saat | Aktivite |
 |------|----------|
-| 09:00–10:30 | IRQ / EINT anlatımı |
-| 10:30–12:30 | Uygulama / kurulum tamamlama |
-| 13:30–14:30 | Konu pekiştirme / mentör turu |
-| 14:30–16:30 | Görevler (kolay / orta / zor) |
-| 16:30–17:00 | Stand-up + teslim |
-
----
-
-## Anlatım
-
-Bugünün konusu gün planında ve (doldurulacak) [`01_Anlatim.md`](01_Anlatim.md) dosyasında işlenir.
-
----
-
-## Görevler
-
-Herkes aynı listeyi yapar: kolay → orta → zor.  
-Detay: [`02_Gorevler.md`](02_Gorevler.md)
+| 09:00–10:00 | C notu: türler, `if`, `while`, `for` (kart örnekleri) |
+| 10:00–12:30 | **Uygulama 1–2** (kolay + orta göreve başla) |
+| 13:30–14:00 | Kısa soru–cevap / takılan yerler |
+| 14:00–16:30 | **Uygulama 3** (zor) + eksikleri tamamla |
+| 16:30–17:00 | Teslim + kısa paylaşım |
 
 ---
 
@@ -50,3 +38,5 @@ teslimler/Stajyer_X/
 ├── rapor/gunluk_rapor.md
 └── proje/
 ```
+
+Zor görev → GitHub `2026-07-23/` (detay görev dosyasında).

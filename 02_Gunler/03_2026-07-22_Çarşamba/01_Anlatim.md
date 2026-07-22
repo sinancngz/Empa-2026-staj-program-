@@ -4,6 +4,20 @@ Kesme mekanizması, öncelik yönetimi ve pin kenar ayarları
 
 Bu notu okuyarak kesmenin ne olduğunu, harici kesmeyi ve **NVIC**’i öğreneceksin. Kartın **ARM Cortex-M** tabanlı bir **MCU** (ABOV A34G43x); NVIC bu çekirdek ailesinde yerleşiktir. Pazartesi (GPIO) ve Salı (debounce, RAM/Flash) bilgine bağlayarak ilerle; bitince [`02_Gorevler.md`](02_Gorevler.md).
 
+### Bu notu nasıl kullanmalısın?
+
+1. **§1–3:** Kavram — polling vs kesme, ISR, NVIC (okuma, kod yazma yok).  
+2. **§5 + resim3:** Pin config penceresinde her satırın ne işe yaradığını kartınla eşleştir.  
+3. Örnek projede `IRQHandler`, `NVIC_EnableIRQ`, `EXTI` araması yap.  
+4. [`02_Gorevler.md`](02_Gorevler.md): önce flag + `main`, sonra tam kesme; rapordaki **10 teori sorusu** için bu notu kaynak göster.
+
+### Gün sonu hedefleri
+
+- Polling ile kesme arasındaki farkı **bir cümleyle** söyleyebilmek.  
+- ISR’da neden **kısa** kod yazıldığını açıklayabilmek.  
+- Pull-up butonda neden **Falling Edge** seçildiğini anlatmak.  
+- `volatile bool flag` kullanımını Salı’daki RAM paylaşımı ile bağlayabilmek.
+
 ---
 
 ## Bugün ne öğreneceksin?
@@ -88,7 +102,15 @@ int main(void)
 
 Salı günü butonu döngüde okuyordunuz. Bugün aynı buton “basıldığı anda” (veya bırakıldığı anda) kesme üretecek — sürekli sormaya gerek kalmaz.
 
-**Dikkat — bounce:** Mekanik buton hâlâ sıçrar. Kesme, her sıçramada birden fazla ISR tetikleyebilir. Çözümler: pin debounce filtresi (donanım, resim3’te var), ISR’da zaman damgası ile yazılım debounce, veya flag + `main`’de debounce (Salı bilgisi).
+**Dikkat — bounce:** Mekanik buton hâlâ sıçrar. Kesme, her sıçramada birden fazla ISR tetikleyebilir — Salı’da döngüde gördüğün 0–1–0 dizisinin her geçişi ayrı **kenar** sayılabilir.
+
+| Yaklaşım | Ne yaparsın? | Artı / eksi |
+|----------|--------------|-------------|
+| Donanım debounce (resim3) | Pin filtresi açık | ISR sayısı azalır; clock ayarı gerekir |
+| ISR’da zaman damgası | Son ISR’dan X ms geçmeden yok say | ISR biraz uzar; dikkatli yaz |
+| Flag + `main` | ISR sadece “bir şey oldu” der; Salı debounce `main`’de | ISR en kısa; bugün için iyi model |
+
+Pratik öneri: Öğrenirken **ISR = `button_flag = true` + clear pending**; LED toggle ve debounce **kesinlikle `main`** içinde kalsın.
 
 ---
 
@@ -122,6 +144,10 @@ Ana program çalışıyor → öncelik 5 harici kesme ISR’ı başladı → dah
 Cortex-M MCU’larda onlarca maskelenebilir kesme kanalı ve yazılımla ayarlanabilir öncelik seviyeleri bulunur (sayı çipe göre değişir). Gecikme düşüktür: olay ile ISR giriş arası kısa tutulur — gömülü kontrol için uygundur.
 
 **Özet:** Buton, timer, UART gibi kaynaklar kesme üretir; **NVIC** hangisinin önce işleneceğine karar verir (trafik polisi gibi).
+
+**Senin yazdığın kodda NVIC nerede?** Genelde `Init` fonksiyonunda: “şu EXTI kanalını aç, önceliği şu olsun” dersin. ISR’ın **adı** vektör tablosunda sabittir; yanlış isim veya enable unutulursa kesme hiç gelmez — görevlerde ilk kontrol listesi budur.
+
+**ISR çalışırken `main` ne olur?** O anki komut yarım kalır; CPU register’ları donanım tarafından saklanır, ISR biter, kaldığın yere dönülür. Bu yüzden ISR uzun olursa chase/blink **takılır** gibi görünür.
 
 ---
 

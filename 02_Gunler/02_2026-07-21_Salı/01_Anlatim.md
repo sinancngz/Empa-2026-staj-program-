@@ -4,6 +4,19 @@ Temel kavramlar, bellek (RAM / Flash) ve sistem saati
 
 Bu notu okuyarak MPU ile MCU farkını, belleğin nerede durduğunu ve staj kartındaki çipin neden bir **MCU** olduğunu öğreneceksin. RAM, Flash, GPIO ve debounce örnekleri **MCU** bölümünde; mikroişlemci kısmı sadece farkı netleştirmek için kısa. Kartın: **ABOV A34G43x** (Tiremo Cortex).
 
+### Bu notu nasıl kullanmalısın?
+
+1. **İlk tablo + resim1:** MPU — bellek dışarıda; resimdeki kutuları ezberle değil, “bus ile bağlı” diye anla.  
+2. **MCU + resim2:** Flash/RAM/GPIO aynı çipte; dün yazdığın `led_on`, `press_count` **SRAM**’dedir.  
+3. **§3 debounce örneği:** Kodu satır satır oku; `GetTickMs()` ile 20 ms eşiğini görevlerde kullan.  
+4. [`02_Gorevler.md`](02_Gorevler.md): kısa/uzun basış için `uint32_t` süre ölçümü.
+
+### Gün sonu hedefleri
+
+- MPU ile MCU’yu tabloyla ayırt edebilmek (bellek nerede?).  
+- Bir değişkenin **RAM**’de, `const` ve fonksiyon kodunun **Flash**’ta olduğunu söyleyebilmek.  
+- Debounce mantığını (zaman damgası + stabil okuma) açıklayabilmek.
+
 ---
 
 ## İki kavramı baştan ayır
