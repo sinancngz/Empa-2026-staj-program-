@@ -1,61 +1,38 @@
-# Gün 07 — Görevler (ADC · sadece pil okuma)
+# Gün 07 — Görevler (Pil voltajı okuma)
 
-**Herkes aynı görevleri yapar.**  
-Sıra: Kolay → Orta → Zor → Teorik sorular. Bitirdikçe mentöre göster.
-
-**Referans:** `Examples/ADC/ADC_Battery/`  
-**Anlatım:** [`01_Anlatim.md`](01_Anlatim.md)
+Anlatım: [`01_Anlatim.md`](01_Anlatim.md)
 
 ---
 
-## Ortak hazırlık
+## Görev
 
-- [ ] Anlatımı okudum
-- [ ] Kart bağlı, proje açılıyor
-- [ ] Datasheet / şemada pil pin + ADC kanalını araştırdım (rapora yazacağım)
-- [ ] `ADC_Battery` örneğini buldum
+Pilden voltaj oku. Hesapladığın değeri (mV veya V) **debug UART / terminalde her 5 saniyede bir** yazdır.
 
----
+Örnek satır:
 
-## Kolay
+```text
+BAT = 3720 mV
+```
 
-| # | Görev | Yapıldı |
+(istersen yanına `raw` de ekleyebilirsin)
+
+### Yapılacaklar
+
+| # | Madde | Yapıldı |
 |---|-------|---------|
-| 1 | `ADC_Battery` örneğini build et ve karta yükle | ☐ |
-| 2 | Ham ADC değerini (`raw`) UART’ta gör | ☐ |
-| 3 | Datasheet/şemadan: pil hangi pin ve hangi ADC kanalı? (rapora 2 satır yaz) | ☐ |
+| 1 | Şema + datasheet’ten pil pin / ADC kanalını bul (rapora yaz) | ☐ |
+| 2 | ADC ile pil kanalından ölçüm al | ☐ |
+| 3 | `raw` → voltaj (mV/V) çevir; bölücü varsa uygula | ☐ |
+| 4 | Terminalde **5 saniyede bir** pil değerini göster | ☐ |
+| 5 | Aşağıdaki teorik soruları rapora cevapla | ☐ |
 
-**Beklenen:** Ölçüm geliyor; kanalı ezbere değil dokümandan buldun.
+### Kabul
 
----
-
-## Orta
-
-| # | Görev | Yapıldı |
-|---|-------|---------|
-| 1 | `raw` → **mV** dönüşümü yap (formül: \(V = raw \times V_{ref} / (2^n-1)\); bölücü varsa uygula) | ☐ |
-| 2 | Yaklaşık **1 Hz** periyotla `BAT=xxxx mV  raw=yyyy` satırını UART’a bas | ☐ |
-| 3 | Rapora yaz: kullandığın Vref, bit sayısı, (varsa) bölücü oranı \(k\) | ☐ |
-
-**Beklenen:** Sadece ham sayı değil, anlamlı voltaj görüyorsun.
-
----
-
-## Zor
-
-| # | Görev | Yapıldı |
-|---|-------|---------|
-| 1 | LOW eşik koy (ör. belirli mV altında uyarı); eşik altındayken LED yak veya `LOW_BAT` log’u | ☐ |
-| 2 | Spam yok: sürekli basma; duruma girince **bir kez** event (mümkünse basit histerezis) | ☐ |
-| 3 | Son 5 ölçümün ortalamasını (moving average) da yazdır **veya** butonla anlık `sample` al | ☐ |
-
-**Beklenen:** Pil izleme “ürün” gibi davranıyor; sadece tek raw print değil.
+Mentöre gösterirken terminalde yaklaşık 5 sn arayla güncellenen pil değeri görünmeli.
 
 ---
 
 ## Teorik sorular (cevapları rapora yaz)
-
-Anlatımı okuduktan sonra aşağıdaki **10 soruyu** cevapla. Cevapları `teslimler/.../rapor/gunluk_rapor.md` içine yaz.
 
 **1.** ADC açılımı nedir? Analog sinyali neden doğrudan mikrodenetleyici işleyemez?
 
@@ -83,13 +60,6 @@ Anlatımı okuduktan sonra aşağıdaki **10 soruyu** cevapla. Cevapları `tesli
 
 ```
 teslimler/Stajyer_X/
-├── rapor/gunluk_rapor.md   ← kanal, Vref, formül, eşik, teorik cevaplar
+├── rapor/gunluk_rapor.md   ← pin/kanal, formül, teorik cevaplar
 └── proje/
 ```
-
-Raporda mutlaka olsun:
-
-1. Pil pin + ADC kanalı  
-2. Vref ve çözünürlük  
-3. raw → mV formülü (ve bölücü)  
-4. Yukarıdaki 10 teorik sorunun cevapları

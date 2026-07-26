@@ -4,17 +4,17 @@
 |---|---|
 | **Tarih** | 2026-07-28 Salı |
 | **Hafta** | 2 |
-| **Konu** | ADC temelleri · datasheet’ten kanal bulma · sadece pil okuma |
-| **Referans** | `Examples/ADC/ADC_Battery/` |
+| **Konu** | ADC teorisi · pilden voltaj okuma |
+| **Referans** | Kart şeması · A34G43x datasheet |
 
 ---
 
 ## Bugün ne yapacağız?
 
-ADC’nin analog sinyali sayıya nasıl çevirdiğini öğreneceğiz. Sonra Tiremo’da **sadece pil gerilimini** okuyacağız: hangi pin/kanal, Vref, raw → mV formülü, datasheet araştırması.
+ADC teorisini öğreneceğiz. Görevde **sadece pilden voltaj okuyup** değeri terminalde **5 saniyede bir** göstereceğiz.
 
-- Anlatım: [`01_Anlatim.md`](01_Anlatim.md)  
-- Görevler + teorik sorular: [`02_Gorevler.md`](02_Gorevler.md)
+- Teori: [`01_Anlatim.md`](01_Anlatim.md)  
+- Görev: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
 
@@ -22,9 +22,9 @@ ADC’nin analog sinyali sayıya nasıl çevirdiğini öğreneceğiz. Sonra Tire
 
 | Saat | Aktivite |
 |------|----------|
-| 09:00–10:30 | ADC anlatımı |
-| 10:30–12:30 | Datasheet / şema + `ADC_Battery` |
-| 13:30–16:30 | Görevler (kolay / orta / zor) + teorik sorular |
+| 09:00–11:00 | ADC anlatımı |
+| 11:00–12:30 | Şema / datasheet: pil pin & kanal |
+| 13:30–16:30 | Pil okuma + 5 sn’de bir terminal log |
 | 16:30–17:00 | Stand-up + teslim |
 
 ---
