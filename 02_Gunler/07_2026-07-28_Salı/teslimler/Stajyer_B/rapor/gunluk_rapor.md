@@ -1,10 +1,10 @@
-# Günlük Rapor — Gün 07
+# Günlük Rapor — Gün 06
 
 | Alan | Değer |
 |------|-------|
 | **Stajyer** | B — Burak Uçar |
-| **Tarih** | 2026-07-28 |
-| **Konu** | Free Running Timer ile süre ölçümü |
+| **Tarih** | 2026-07-27 |
+| **Konu** | Timer, tick, periyodik görev |
 
 ## Bugün ne yaptım?
 

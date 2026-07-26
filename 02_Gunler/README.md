@@ -20,8 +20,8 @@ XX_YYYY-MM-DD_Gun/
 | 03 | 2026-07-22 Çarşamba | [UART protokolü (polling)](03_2026-07-22_Çarşamba/00_GUN_PLANI.md) |
 | 04 | 2026-07-23 Perşembe | [IRQ & EINT](04_2026-07-23_Perşembe/00_GUN_PLANI.md) |
 | 05 | 2026-07-24 Cuma | [Hafta 1 entegrasyon](05_2026-07-24_Cuma/00_GUN_PLANI.md) |
-| 06 | 2026-07-27 Pazartesi | [Timer zamanlama](06_2026-07-27_Pazartesi/00_GUN_PLANI.md) |
-| 07 | 2026-07-28 Salı | [FRT ölçüm](07_2026-07-28_Salı/00_GUN_PLANI.md) |
+| 06 | 2026-07-27 Pazartesi | [Debug Library (UART)](06_2026-07-27_Pazartesi/00_GUN_PLANI.md) |
+| 07 | 2026-07-28 Salı | [ADC & pil okuma](07_2026-07-28_Salı/00_GUN_PLANI.md) |
 | 08 | 2026-07-29 Çarşamba | [Batarya izleme (ADC)](08_2026-07-29_Çarşamba/00_GUN_PLANI.md) |
 | 09 | 2026-07-30 Perşembe | [Mikrofon (ADC)](09_2026-07-30_Perşembe/00_GUN_PLANI.md) |
 | 10 | 2026-07-31 Cuma | [WDT & Hafta 2 demosu](10_2026-07-31_Cuma/00_GUN_PLANI.md) |

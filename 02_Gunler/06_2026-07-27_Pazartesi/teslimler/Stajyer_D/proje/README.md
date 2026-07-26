@@ -1,5 +1,5 @@
 # Proje — Aykut İsmet Aslantaş
 
-Gün 06 · Timer zamanlama
+Gün 07 · FRT ölçüm
 
 Bu klasöre bugünkü proje dosyalarını koy.

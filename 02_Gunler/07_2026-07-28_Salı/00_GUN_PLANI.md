@@ -1,20 +1,20 @@
-# Gün 07 — FRT ölçüm
+# Gün 07 — ADC & Pil gerilimi okuma
 
 | | |
 |---|---|
 | **Tarih** | 2026-07-28 Salı |
 | **Hafta** | 2 |
-| **Konu** | Free Running Timer ile süre ölçümü |
-| **Referans** | `Examples/FRT/` |
+| **Konu** | ADC temelleri · datasheet’ten kanal bulma · sadece pil okuma |
+| **Referans** | `Examples/ADC/ADC_Battery/` |
 
 ---
 
 ## Bugün ne yapacağız?
 
-FRT ile basış süresi / aralık ölçümü yapacağız.
+ADC’nin analog sinyali sayıya nasıl çevirdiğini öğreneceğiz. Sonra Tiremo’da **sadece pil gerilimini** okuyacağız: hangi pin/kanal, Vref, raw → mV formülü, datasheet araştırması.
 
-Anlatım notları: [`01_Anlatim.md`](01_Anlatim.md)  
-Görevler: [`02_Gorevler.md`](02_Gorevler.md)
+- Anlatım: [`01_Anlatim.md`](01_Anlatim.md)  
+- Görevler + teorik sorular: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
 
@@ -22,24 +22,10 @@ Görevler: [`02_Gorevler.md`](02_Gorevler.md)
 
 | Saat | Aktivite |
 |------|----------|
-| 09:00–10:30 | FRT anlatımı |
-| 10:30–12:30 | Uygulama / kurulum tamamlama |
-| 13:30–14:30 | Konu pekiştirme / mentör turu |
-| 14:30–16:30 | Görevler (kolay / orta / zor) |
+| 09:00–10:30 | ADC anlatımı |
+| 10:30–12:30 | Datasheet / şema + `ADC_Battery` |
+| 13:30–16:30 | Görevler (kolay / orta / zor) + teorik sorular |
 | 16:30–17:00 | Stand-up + teslim |
-
----
-
-## Anlatım
-
-Bugünün konusu gün planında ve (doldurulacak) [`01_Anlatim.md`](01_Anlatim.md) dosyasında işlenir.
-
----
-
-## Görevler
-
-Herkes aynı listeyi yapar: kolay → orta → zor.  
-Detay: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
 

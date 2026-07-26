@@ -1,5 +1,5 @@
 # Proje — Başar Yıldırım
 
-Gün 07 · FRT ölçüm
+Gün 06 · Timer zamanlama
 
 Bu klasöre bugünkü proje dosyalarını koy.

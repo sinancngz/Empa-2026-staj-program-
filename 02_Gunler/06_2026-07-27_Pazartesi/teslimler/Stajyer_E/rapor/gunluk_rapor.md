@@ -1,10 +1,10 @@
-# Günlük Rapor — Gün 06
+# Günlük Rapor — Gün 07
 
 | Alan | Değer |
 |------|-------|
 | **Stajyer** | E — Yavuz Selim Konaç |
-| **Tarih** | 2026-07-27 |
-| **Konu** | Timer, tick, periyodik görev |
+| **Tarih** | 2026-07-28 |
+| **Konu** | Free Running Timer ile süre ölçümü |
 
 ## Bugün ne yaptım?
 
