@@ -1,5 +1,6 @@
-# Proje — Barış Kaynak
+﻿# Proje — Barış Kaynak
 
-Gün 10 · WDT & Hafta 2 demosu
+Gün 10 · Mikrofon stream + Python grafik
 
 Bu klasöre bugünkü proje dosyalarını koy.
+

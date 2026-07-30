@@ -1,10 +1,10 @@
-# Günlük Rapor — Gün 09
+﻿# Günlük Rapor — Gün 09
 
 | Alan | Değer |
 |------|-------|
 | **Stajyer** | G — Barış Kaynak |
 | **Tarih** | 2026-07-30 |
-| **Konu** | Mikrofon, RMS, ses seviyesi |
+| **Konu** | Analog mikrofon ADC + UART |
 
 ## Bugün ne yaptım?
 
@@ -12,11 +12,11 @@
 
 ## Görev durumu
 
-| Seviye | Yapıldı |
+| Madde | Yapıldı |
 |--------|---------|
-| Kolay | ☐ |
-| Orta | ☐ |
-| Zor | ☐ |
+| ADC raw okuma | ☐ |
+| UART log | ☐ |
+| Sessiz/sesli karşılaştırma | ☐ |
 
 ## Takıldığım yer
 

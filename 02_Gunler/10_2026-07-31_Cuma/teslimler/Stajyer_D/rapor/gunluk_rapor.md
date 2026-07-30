@@ -1,10 +1,10 @@
-# Günlük Rapor — Gün 10
+﻿# Günlük Rapor — Gün 10
 
 | Alan | Değer |
 |------|-------|
 | **Stajyer** | D — Aykut İsmet Aslantaş |
 | **Tarih** | 2026-07-31 |
-| **Konu** | Watchdog + haftalık entegrasyon |
+| **Konu** | Mikrofon stream + Python grafik (1 kHz) |
 
 ## Bugün ne yaptım?
 
@@ -12,11 +12,11 @@
 
 ## Görev durumu
 
-| Seviye | Yapıldı |
+| Madde | Yapıldı |
 |--------|---------|
-| Kolay | ☐ |
-| Orta | ☐ |
-| Zor | ☐ |
+| Firmware stream | ☐ |
+| Python canlı grafik | ☐ |
+| 1 kHz sinüs testi | ☐ |
 
 ## Takıldığım yer
 
