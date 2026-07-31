@@ -1,6 +1,0 @@
-﻿# Proje — Yavuz Selim Konaç
-
-Gün 10 · Mikrofon stream + Python grafik
-
-Bu klasöre bugünkü proje dosyalarını koy.
-
