@@ -25,9 +25,9 @@ XX_YYYY-MM-DD_Gun/
 | 08 | 2026-07-29 Çarşamba | [Batarya izleme (ADC)](08_2026-07-29_Çarşamba/00_GUN_PLANI.md) |
 | 09 | 2026-07-30 Perşembe | [Mikrofon (ADC)](09_2026-07-30_Perşembe/00_GUN_PLANI.md) |
 | 10 | 2026-07-31 Cuma | [WDT & Hafta 2 demosu](10_2026-07-31_Cuma/00_GUN_PLANI.md) |
-| 11 | 2026-08-03 Pazartesi | [SHT40 (I2C)](11_2026-08-03_Pazartesi/00_GUN_PLANI.md) |
-| 12 | 2026-08-04 Salı | [LIS2DE12 hareket](12_2026-08-04_Salı/00_GUN_PLANI.md) |
-| 13 | 2026-08-05 Çarşamba | [Çoklu sensör](13_2026-08-05_Çarşamba/00_GUN_PLANI.md) |
+| 11 | 2026-08-03 Pazartesi | [I2C temelleri](11_2026-08-03_Pazartesi/00_GUN_PLANI.md) |
+| 12 | 2026-08-04 Salı | [SHT40 sıcaklık / nem](12_2026-08-04_Salı/00_GUN_PLANI.md) |
+| 13 | 2026-08-05 Çarşamba | [LIS2DE12 ivme X/Y/Z](13_2026-08-05_Çarşamba/00_GUN_PLANI.md) |
 | 14 | 2026-08-06 Perşembe | [BSP / APP ayrımı](14_2026-08-06_Perşembe/00_GUN_PLANI.md) |
 | 15 | 2026-08-07 Cuma | [Edge Monitor demosu](15_2026-08-07_Cuma/00_GUN_PLANI.md) |
 | 16 | 2026-08-10 Pazartesi | [TiremoCortex kod tabanı](16_2026-08-10_Pazartesi/00_GUN_PLANI.md) |
