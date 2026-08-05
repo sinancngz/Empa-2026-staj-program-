@@ -52,5 +52,5 @@ Her gün (Gün 01 şablonu):
 |-------|----------|------|
 | 1 | 20–24 Temmuz | Ortam, GPIO, UART |
 | 2 | 27–31 Temmuz | Timer, ADC, WDT |
-| 3 | 3–7 Ağustos | I2C + BSP/APP |
+| 3 | 3–7 Ağustos | I2C + IoT/MQTT (ESP32 → HiveMQ) |
 | 4 | 10–14 Ağustos | TiremoCortex + MQTT |

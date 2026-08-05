@@ -1,19 +1,19 @@
-# Gün 15 — Edge Monitor demosu
+# Gün 15 — ESP32 → HiveMQ Demo
 
 | | |
 |---|---|
 | **Tarih** | 2026-08-07 Cuma |
 | **Hafta** | 3 |
-| **Konu** | I2C + alarm + dashboard ürünü |
-| **Referans** | `Hafta 3 örnekleri` |
+| **Konu** | ESP32 Wi-Fi + MQTT; sensör verisini HiveMQ’ya publish |
+| **Referans** | Dünkü HiveMQ hesap · ESP32 + sensör (mentör) |
 
 ---
 
 ## Bugün ne yapacağız?
 
-Hafta 3’ü edge monitor mini ürünü olarak demoya bağlayacağız.
+ESP32’yi Wi-Fi ve MQTT broker’a bağlayıp sensör bilgilerini HiveMQ’ya göndereceğiz. Haftanın kapanış demosu bu.
 
-Anlatım notları: [`01_Anlatim.md`](01_Anlatim.md)  
+Anlatım: [`01_Anlatim.md`](01_Anlatim.md)  
 Görevler: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
@@ -22,24 +22,28 @@ Görevler: [`02_Gorevler.md`](02_Gorevler.md)
 
 | Saat | Aktivite |
 |------|----------|
-| 09:00–10:30 | Demo beklentisi |
-| 10:30–12:30 | Uygulama / kurulum tamamlama |
-| 13:30–14:30 | Konu pekiştirme / mentör turu |
-| 14:30–16:30 | Görevler (kolay / orta / zor) |
-| 15:30–16:30 | Kısa demolar |
-| 16:30–17:00 | Stand-up + teslim |
+| 09:00–09:30 | ESP32 Wi-Fi + program akışı + callback |
+| 09:30–12:30 | WiFi + MQTT bağlantı; ilk publish |
+| 13:30–14:30 | Sensör entegrasyonu + JSON |
+| 14:30–16:00 | Final görev + demo hazırlığı |
+| 16:00–16:45 | Kısa demolar |
+| 16:45–17:00 | Stand-up + teslim |
 
 ---
 
-## Anlatım
+## Anlatım özeti
 
-Bugünün konusu gün planında ve (doldurulacak) [`01_Anlatim.md`](01_Anlatim.md) dosyasında işlenir.
+- `WiFi.begin` → IP → MQTT Connected  
+- Kod iskeleti: WiFi → MQTT → loop → publish / callback  
+- JSON telemetri + HiveMQ doğrulama  
+
+Detay: [`01_Anlatim.md`](01_Anlatim.md)
 
 ---
 
 ## Görevler
 
-Herkes aynı listeyi yapar: kolay → orta → zor.  
+**Son görev:** ESP32 ile sensör verisini HiveMQ’ya yollamak.  
 Detay: [`02_Gorevler.md`](02_Gorevler.md)
 
 ---
@@ -49,5 +53,5 @@ Detay: [`02_Gorevler.md`](02_Gorevler.md)
 ```
 teslimler/Stajyer_X/
 ├── rapor/gunluk_rapor.md
-└── proje/
+└── proje/          # ESP32 firmware (secret’sız)
 ```
